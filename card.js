@@ -18,7 +18,7 @@ const RANKS = {
   'J': '10',
   'Q': '10',
   'K': '10',
-  'A': '1'
+  'A': '11'
 };
 
 
@@ -28,8 +28,12 @@ class Card {
     this.suit = suit;
   };
 
+  rank() {
+    return this.rank;
+  }
+
   value() {
-    return parseInt(this.value);
+    return parseInt(RANKS[this.rank]);
   }
 
   static suits() {

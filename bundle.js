@@ -78,7 +78,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\nconst RANKS = {\n  '2': '2',\n  '3': '3',\n  '4': '4',\n  '5': '5',\n  '6': '6',\n  '7': '7',\n  '8': '8',\n  '9': '9',\n  '10': '10',\n  'J': '10',\n  'Q': '10',\n  'K': '10',\n  'A': '1'\n};\n\nclass Card {\n  constructor(rank, suit) {\n    this.rank = rank;\n    this.suit = suit;\n  }\n\n  value() {\n    return parseInt(this.value);\n  }\n\n  static suits() {\n    return Object.keys(SUITS);\n  }\n\n  static ranks() {\n    return Object.keys(RANKS);\n  }\n\n  static values() {\n    return Object.values(RANKS);\n  }\n}\n\nmodule.exports = Card;\n\n//# sourceURL=webpack:///./card.js?");
+eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\nconst RANKS = {\n  '2': '2',\n  '3': '3',\n  '4': '4',\n  '5': '5',\n  '6': '6',\n  '7': '7',\n  '8': '8',\n  '9': '9',\n  '10': '10',\n  'J': '10',\n  'Q': '10',\n  'K': '10',\n  'A': '11'\n};\n\nclass Card {\n  constructor(rank, suit) {\n    this.rank = rank;\n    this.suit = suit;\n  }\n\n  rank() {\n    return this.rank;\n  }\n\n  value() {\n    return parseInt(RANKS[this.rank]);\n  }\n\n  static suits() {\n    return Object.keys(SUITS);\n  }\n\n  static ranks() {\n    return Object.keys(RANKS);\n  }\n\n  static values() {\n    return Object.values(RANKS);\n  }\n}\n\nmodule.exports = Card;\n\n//# sourceURL=webpack:///./card.js?");
+
+/***/ }),
+
+/***/ "./hand.js":
+/*!*****************!*\
+  !*** ./hand.js ***!
+  \*****************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class Hand {\n  constructor() {\n    this.cards = [];\n    this.value = 0;\n    this.aceAs11 = false;\n  }\n\n  receiveCard(card) {\n    this.cards.push(card);\n  }\n\n  addCardToValue(card) {\n\n    if (card.rank === 'A') {\n\n      if (this.value >= 11) {\n        this.value += 1;\n      } else {\n        this.aceAs11 = true;\n        this.value += 11;\n      }\n    } else {\n      this.value += card.value;\n    }\n\n    if (this.value > 21 && this.aceAs11 === true) {\n      this.value -= 10;\n    }\n  }\n\n  isBusted() {\n    this.value > 21;\n  }\n}\n\nmodule.exports = Hand;\n\n//# sourceURL=webpack:///./hand.js?");
 
 /***/ }),
 
@@ -89,7 +100,7 @@ eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\n
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\nconst Player = __webpack_require__(/*! ./player */ \"./player.js\");\n\n//# sourceURL=webpack:///./index.js?");
+eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\nconst Player = __webpack_require__(/*! ./player */ \"./player.js\");\nconst Hand = __webpack_require__(/*! ./hand */ \"./hand.js\");\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -100,7 +111,7 @@ eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Player {\n  constructor(name) {\n    this.name = name;\n    this.bankroll = 1000;\n  }\n\n  placeBet(amt) {\n    this.bankroll -= amt;\n    this.bet = amt;\n  }\n\n  receiveWinnings(amt) {\n    this.bankroll += amt;\n  }\n}\n\nmodule.exports = Player;\n\n//# sourceURL=webpack:///./player.js?");
+eval("class Player {\n  constructor(name) {\n    this.name = name;\n    this.bankroll = 1000;\n    this.hand = new Hand();\n  }\n\n  placeBet(amt) {\n    this.bankroll -= amt;\n    this.bet = amt;\n  }\n\n  receiveWinnings(amt) {\n    this.bankroll += amt;\n  }\n}\n\nmodule.exports = Player;\n\n//# sourceURL=webpack:///./player.js?");
 
 /***/ }),
 
