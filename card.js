@@ -5,7 +5,7 @@ const SUITS = {
   'c': 'c'
 };
 
-const RANKS_VALUES = {
+const RANKS = {
   '2': '2',
   '3': '3',
   '4': '4',
@@ -33,15 +33,15 @@ class Card {
   }
 
   static suits() {
-    Object.keys(SUITS)
+    return Object.keys(SUITS);
   }
 
   static ranks() {
-    Object.keys(RANKS)
+    return Object.keys(RANKS);
   }
 
   static values() {
-    Object.values(RANKS)
+    return Object.values(RANKS);
   }
 }
 

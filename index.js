@@ -1,2 +1,2 @@
-const Deck = require ('./deck');
+const Shoe = require ('./shoe');
 const Card = require ('./card');

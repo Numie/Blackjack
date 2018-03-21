@@ -78,18 +78,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\nconst RANKS_VALUES = {\n  '2': '2',\n  '3': '3',\n  '4': '4',\n  '5': '5',\n  '6': '6',\n  '7': '7',\n  '8': '8',\n  '9': '9',\n  '10': '10',\n  'J': '10',\n  'Q': '10',\n  'K': '10',\n  'A': '1'\n};\n\nclass Card {\n  constructor(rank, suit) {\n    this.rank = rank;\n    this.suit = suit;\n  }\n\n  value() {\n    return parseInt(this.value);\n  }\n\n  static suits() {\n    Object.keys(SUITS);\n  }\n\n  static ranks() {\n    Object.keys(RANKS);\n  }\n\n  static values() {\n    Object.values(RANKS);\n  }\n}\n\nmodule.exports = Card;\n\n//# sourceURL=webpack:///./card.js?");
-
-/***/ }),
-
-/***/ "./deck.js":
-/*!*****************!*\
-  !*** ./deck.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const Card = __webpack_require__(/*! ./card */ \"./card.js\");\n\nclass Deck {\n  constructor() {}\n\n  static createShoe() {\n    const deck = [];\n\n    Card.ranks.forEach(ranks => {\n      Card.suits.forEach(suit => {\n        deck.push(new Card(rank, suit));\n      });\n    });\n\n    return deck;\n  }\n}\n\nmodule.exports = Deck;\n\n//# sourceURL=webpack:///./deck.js?");
+eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\nconst RANKS = {\n  '2': '2',\n  '3': '3',\n  '4': '4',\n  '5': '5',\n  '6': '6',\n  '7': '7',\n  '8': '8',\n  '9': '9',\n  '10': '10',\n  'J': '10',\n  'Q': '10',\n  'K': '10',\n  'A': '1'\n};\n\nclass Card {\n  constructor(rank, suit) {\n    this.rank = rank;\n    this.suit = suit;\n  }\n\n  value() {\n    return parseInt(this.value);\n  }\n\n  static suits() {\n    return Object.keys(SUITS);\n  }\n\n  static ranks() {\n    return Object.keys(RANKS);\n  }\n\n  static values() {\n    return Object.values(RANKS);\n  }\n}\n\nmodule.exports = Card;\n\n//# sourceURL=webpack:///./card.js?");
 
 /***/ }),
 
@@ -100,7 +89,18 @@ eval("const Card = __webpack_require__(/*! ./card */ \"./card.js\");\n\nclass De
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Deck = __webpack_require__(/*! ./deck */ \"./deck.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\n\n//# sourceURL=webpack:///./index.js?");
+eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./shoe.js":
+/*!*****************!*\
+  !*** ./shoe.js ***!
+  \*****************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const Card = __webpack_require__(/*! ./card */ \"./card.js\");\n\nclass Shoe {\n  constructor(shoe = Shoe.createShoe()) {\n    this.shoe = shoe;\n  }\n\n  static createShoe() {\n    let shoe = [];\n\n    Card.ranks().forEach(rank => {\n      Card.suits().forEach(suit => {\n        shoe.push(new Card(rank, suit));\n      });\n    });\n\n    for (let i = 0; i < 3; i++) {\n      shoe = shoe.concat(shoe);\n    }\n\n    return shoe;\n  }\n\n  shuffle() {\n    for (let i = this.shoe.length - 1; i > 0; i--) {\n      const j = Math.floor(Math.random() * (i + 1));\n      [this.shoe[i], this.shoe[j]] = [this.shoe[j], this.shoe[i]];\n    }\n\n    return this.shoe;\n  }\n\n}\nconst shoe = Shoe.new();\nconsole.log(shoe.shuffle());\n\nmodule.exports = Shoe;\n\n//# sourceURL=webpack:///./shoe.js?");
 
 /***/ })
 
