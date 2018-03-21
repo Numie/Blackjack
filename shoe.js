@@ -34,8 +34,12 @@ class Shoe {
     return this.shoe.length;
   }
 
-  take() {
-    return this.shoe.shift();
+  take(n=1) {
+    const cards = [];
+    for (let i = 0; i < n; i++) {
+      cards.push(this.shoe.shift());
+    }
+    return cards;
   }
 
 }
