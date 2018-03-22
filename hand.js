@@ -8,11 +8,11 @@ class Hand {
   }
 
   hit(shoe) {
-    this.receiveCard();
+    this.receiveCard(shoe);
   }
 
   doubleDown(shoe) {
-    this.receiveCard();
+    this.receiveCard(shoe);
     this.bet *= 2;
   }
 
@@ -20,13 +20,20 @@ class Hand {
     const hand1 = new Hand;
     const hand2 = new Hand;
 
-    hand1.cards.push(this.hand.cards[0]);
-    hand2.cards.push(this.hand.cards[1]);
+    const newBet = this.bet / 2.0;
 
-    this.hands.push(hand1);
-    this.hands.push(hand2);
+    const card1 = this.cards[0];
+    const card2 = this.cards[1];
 
-    this.multiHand = true;
+    hand1.cards.push(card1);
+    hand1.addCardToValue(card1);
+    hand1.bet = newBet;
+
+    hand2.cards.push(card2);
+    hand2.addCardToValue(card2);
+    hand2.bet = newBet;
+
+    return [hand1, hand2];
   }
 
   receiveCard(shoe) {
