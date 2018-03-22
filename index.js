@@ -4,11 +4,13 @@ import Player from './lib/player';
 import Dealer from './lib/dealer';
 import Hand from './lib/hand';
 import Game from './lib/game';
+import { renderBankrolls } from './lib/util.js';
 
 window.addEventListener('load', () => {
   const game = new Game;
   game.shoe.shuffle();
   game.dealCards();
+  renderBankrolls(game);
 
   document.getElementById('hitButton').addEventListener('click', () => {
     game.player.hit(game.shoe);
