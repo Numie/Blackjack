@@ -5,17 +5,18 @@ class Player {
     this.name = name;
     this.bankroll = 1000;
     this.hand = new Hand;
+    this.multiHand = false;
   }
 
-  placeBet(amt) {
+  placeBet(hand, amt) {
     this.bankroll -= amt;
-    this.bet = amt;
+    this.hand.bet = amt;
   }
 
   receiveWinnings(amt) {
     this.bankroll += amt;
-    this.bet = null;
   }
+
 }
 
 module.exports = Player;

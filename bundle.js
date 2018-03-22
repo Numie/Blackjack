@@ -82,6 +82,17 @@ eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\n
 
 /***/ }),
 
+/***/ "./dealer.js":
+/*!*******************!*\
+  !*** ./dealer.js ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const Player = __webpack_require__(/*! ./player */ \"./player.js\");\n\nclass Dealer extends Player {\n  constructor(name) {}\n\n}\n\nmodule.exports = Dealer;\n\n//# sourceURL=webpack:///./dealer.js?");
+
+/***/ }),
+
 /***/ "./hand.js":
 /*!*****************!*\
   !*** ./hand.js ***!
@@ -89,7 +100,7 @@ eval("const SUITS = {\n  'h': 'h',\n  'd': 'd',\n  's': 's',\n  'c': 'c'\n};\n\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Hand {\n  constructor() {\n    this.cards = [];\n    this.value = 0;\n    this.aceAs11 = false;\n    this.isHard = false;\n  }\n\n  receiveCard(shoe) {\n    const card = shoe.drawCard();\n    this.cards.push(card);\n    this.addCardToValue(card);\n  }\n\n  addCardToValue(card) {\n    if (card.rank === 'A') {\n\n      if (this.value >= 11) {\n        this.value += 1;\n      } else {\n        this.aceAs11 = true;\n        this.value += 11;\n      }\n    } else {\n      this.value += card.value();\n    }\n\n    if (this.value > 21 && this.aceAs11 === true && this.isHard === false) {\n      this.isHard = true;\n      this.value -= 10;\n    }\n  }\n\n  isBusted() {\n    return this.value > 21;\n  }\n}\n\nmodule.exports = Hand;\n\n//# sourceURL=webpack:///./hand.js?");
+eval("class Hand {\n  constructor() {\n    this.cards = [];\n    this.value = 0;\n    this.aceAs11 = false;\n    this.isHard = false;\n    this.bet = null;\n  }\n\n  hit(shoe) {\n    this.receiveCard();\n  }\n\n  doubleDown(shoe) {\n    this.receiveCard();\n    this.bet *= 2;\n  }\n\n  split() {\n    const hand1 = new Hand();\n    const hand2 = new Hand();\n\n    hand1.cards.push(this.hand.cards[0]);\n    hand2.cards.push(this.hand.cards[1]);\n\n    this.hands.push(hand1);\n    this.hands.push(hand2);\n\n    this.multiHand = true;\n  }\n\n  receiveCard(shoe) {\n    const card = shoe.drawCard();\n    this.cards.push(card);\n    this.addCardToValue(card);\n  }\n\n  addCardToValue(card) {\n    if (card.rank === 'A') {\n\n      if (this.value >= 11) {\n        this.value += 1;\n      } else {\n        this.aceAs11 = true;\n        this.value += 11;\n      }\n    } else {\n      this.value += card.value();\n    }\n\n    if (this.value > 21 && this.aceAs11 === true && this.isHard === false) {\n      this.isHard = true;\n      this.value -= 10;\n    }\n  }\n\n  isBusted() {\n    return this.value > 21;\n  }\n}\n\nmodule.exports = Hand;\n\n//# sourceURL=webpack:///./hand.js?");
 
 /***/ }),
 
@@ -100,7 +111,7 @@ eval("class Hand {\n  constructor() {\n    this.cards = [];\n    this.value = 0;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\nconst Player = __webpack_require__(/*! ./player */ \"./player.js\");\nconst Hand = __webpack_require__(/*! ./hand */ \"./hand.js\");\n\n//# sourceURL=webpack:///./index.js?");
+eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card = __webpack_require__(/*! ./card */ \"./card.js\");\nconst Player = __webpack_require__(/*! ./player */ \"./player.js\");\nconst Dealer = __webpack_require__(/*! ./dealer */ \"./dealer.js\");\nconst Hand = __webpack_require__(/*! ./hand */ \"./hand.js\");\n\nconst player = new Player('Jason');\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -111,7 +122,7 @@ eval("const Shoe = __webpack_require__(/*! ./shoe */ \"./shoe.js\");\nconst Card
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Hand = __webpack_require__(/*! ./hand */ \"./hand.js\");\n\nclass Player {\n  constructor(name) {\n    this.name = name;\n    this.bankroll = 1000;\n    this.hand = new Hand();\n  }\n\n  placeBet(amt) {\n    this.bankroll -= amt;\n    this.bet = amt;\n  }\n\n  receiveWinnings(amt) {\n    this.bankroll += amt;\n    this.bet = null;\n  }\n}\n\nmodule.exports = Player;\n\n//# sourceURL=webpack:///./player.js?");
+eval("const Hand = __webpack_require__(/*! ./hand */ \"./hand.js\");\n\nclass Player {\n  constructor(name) {\n    this.name = name;\n    this.bankroll = 1000;\n    this.hand = new Hand();\n    this.multiHand = false;\n  }\n\n  placeBet(hand, amt) {\n    this.bankroll -= amt;\n    this.hand.bet = amt;\n  }\n\n  receiveWinnings(amt) {\n    this.bankroll += amt;\n  }\n\n}\n\nmodule.exports = Player;\n\n//# sourceURL=webpack:///./player.js?");
 
 /***/ }),
 

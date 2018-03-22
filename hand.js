@@ -4,6 +4,29 @@ class Hand {
     this.value = 0;
     this.aceAs11 = false;
     this.isHard = false;
+    this.bet = null;
+  }
+
+  hit(shoe) {
+    this.receiveCard();
+  }
+
+  doubleDown(shoe) {
+    this.receiveCard();
+    this.bet *= 2;
+  }
+
+  split() {
+    const hand1 = new Hand;
+    const hand2 = new Hand;
+
+    hand1.cards.push(this.hand.cards[0]);
+    hand2.cards.push(this.hand.cards[1]);
+
+    this.hands.push(hand1);
+    this.hands.push(hand2);
+
+    this.multiHand = true;
   }
 
   receiveCard(shoe) {
