@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.red-card {
+  color: red;
+}
+
+.card-rank {
+  width: max-content;
+}
+
+.card-rank-top {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.card-rank-bottom {
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.card-suit {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: max-content;
+  height: max-content;
+  font-size: 48px;
+}

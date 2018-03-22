@@ -2,19 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/card.css">
     <script type="text/javascript" src="bundle.js"></script>
     <title>Blackjack</title>
   </head>
   <body>
 
-    <div id='player' class='player'></div>
+    <div id='dealer'>
+      <h1>DEALER</h1>
+      <div class='card-area'></div>
+    </div>
 
-    <div id='shoe' class='shoe'></div>
+    <div id='player' class='player'>
+      <h1>PLAYER</h1>
+      <div id='player-card-area' class='card-area'>
+      </div>
+    </div>
 
-    <button id='hit' onclick='player.hit(shoe)'>Hit</button>
-    <button id='stay' onclick='player.stay'>Stay</button>
-    <button id='doubleDown' onclick='player.doubleDown(shoe)'>Double Down</button>
-    <button id='split' onclick='player.split()'>Split</button>
+    <button id='hitButton'>Hit</button>
+    <button id='stayButton'>Stay</button>
+    <button id='doubleDownButton'>Double Down</button>
+    <button id='splitButton'>Split</button>
 
   </body>
 </html>
