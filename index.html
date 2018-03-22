@@ -10,21 +10,27 @@
   </head>
   <body>
 
-    <div id='dealer'>
+    <div class='dealer-area'>
       <h1>DEALER</h1>
-      <div class='card-area'></div>
-    </div>
-
-    <div id='player' class='player'>
-      <h1>PLAYER</h1>
-      <div id='player-card-area' class='card-area'>
+      <div class='card-area'>
+        <div id='dealer-card-container' class='card-container'></div>
       </div>
     </div>
 
-    <button id='hitButton'>Hit</button>
-    <button id='stayButton'>Stay</button>
-    <button id='doubleDownButton'>Double Down</button>
-    <button id='splitButton'>Split</button>
+    <div class='player-area'>
+      <h1>PLAYER</h1>
+      <div id='player-card-area' class='card-area'>
+        <div id='player-card-container' class='card-container'></div>
+      </div>
+
+    </div>
+
+    <div class='buttons'>
+      <button id='hitButton'>Hit</button>
+      <button id='stayButton'>Stay</button>
+      <button id='doubleDownButton'>Double</button>
+      <button id='splitButton'>Split</button>
+    </div>
 
   </body>
 </html>

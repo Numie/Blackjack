@@ -30,8 +30,8 @@ window.addEventListener('load', () => {
 });
 
 renderCard = (card, player) => {
-  const cardArea = document.getElementById('player-card-area');
-  cardArea.appendChild(createCard(card));
+  const playerCardArea = document.getElementById('player-card-container');
+  playerCardArea.appendChild(createCard(card));
 }
 
 createCard = card => {

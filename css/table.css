@@ -1,14 +1,43 @@
 body {
+  display: flex;
+  flex-direction: column;
   background-color: #44874F;
+}
+
+.dealer-area, .player-area {
+  display: flex;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: white;
 }
 
 .card-area {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 auto;
   width: 80%;
   height: 200px;
   border: 10px solid white;
   border-radius: 20px;
+}
+
+.card-container {
+  display: flex;
+  width: max-content;
+}
+
+.buttons {
+  margin: 20px auto;
+}
+
+button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #44874F;
+  border-radius: 5px;
 }
