@@ -3,14 +3,16 @@ class Hand {
     this.cards = [];
     this.value = 0;
     this.aceAs11 = false;
+    this.isHard = false;
   }
 
-  receiveCard(card) {
+  receiveCard(shoe) {
+    const card = shoe.drawCard();
     this.cards.push(card);
+    this.addCardToValue(card);
   }
 
   addCardToValue(card) {
-
     if (card.rank === 'A') {
 
       if (this.value >= 11) {
@@ -21,17 +23,18 @@ class Hand {
       }
 
     } else {
-      this.value += card.value;
+      this.value += card.value();
     }
 
-    if (this.value > 21 && this.aceAs11 === true) {
+    if (this.value > 21 && (this.aceAs11 === true && this.isHard === false)) {
+      this.isHard = true
       this.value -= 10;
     }
 
   }
 
   isBusted() {
-    this.value > 21;
+    return this.value > 21;
   }
 }
 

@@ -28,10 +28,6 @@ class Card {
     this.suit = suit;
   };
 
-  rank() {
-    return this.rank;
-  }
-
   value() {
     return parseInt(RANKS[this.rank]);
   }

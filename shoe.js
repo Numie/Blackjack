@@ -1,8 +1,8 @@
 const Card = require ('./card');
 
 class Shoe {
-  constructor(shoe = Shoe.createShoe()) {
-    this.shoe = shoe;
+  constructor(cards = Shoe.createShoe()) {
+    this.cards = cards;
   };
 
   static createShoe() {
@@ -22,28 +22,22 @@ class Shoe {
   }
 
   shuffle() {
-    for (let i = this.shoe.length - 1; i > 0; i--) {
+    for (let i = this.cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [this.shoe[i], this.shoe[j]] = [this.shoe[j], this.shoe[i]];
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
     }
 
-    return this.shoe;
+    return this.cards;
   }
 
   count() {
-    return this.shoe.length;
+    return this.cards.length;
   }
 
-  take(n=1) {
-    const cards = [];
-    for (let i = 0; i < n; i++) {
-      cards.push(this.shoe.shift());
-    }
-    return cards;
+  drawCard() {
+    return this.cards.shift();
   }
 
 }
-const shoe = new Shoe;
-console.log();
 
 module.exports = Shoe;

@@ -1,3 +1,5 @@
+const Hand = require('./hand');
+
 class Player {
   constructor(name) {
     this.name = name;
@@ -12,6 +14,7 @@ class Player {
 
   receiveWinnings(amt) {
     this.bankroll += amt;
+    this.bet = null;
   }
 }
 
