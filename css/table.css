@@ -21,6 +21,17 @@ h3 {
   font-size: 18px;
 }
 
+.player-info-area {
+  border: 1px solid yellow;
+}
+
+#player-hand-value {
+  padding: 20px;
+  text-align: center;
+  font-size: 36px;
+  border: 1px solid red;
+}
+
 .card-area {
   display: flex;
   align-items: center;

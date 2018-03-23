@@ -4,13 +4,13 @@ import Player from './lib/player';
 import Dealer from './lib/dealer';
 import Hand from './lib/hand';
 import Game from './lib/game';
-import { renderBankrolls, renderBet, playRound, startHand } from './lib/util.js';
+import { renderBankrolls, renderBet, startRound, startHand } from './lib/util.js';
 
 window.addEventListener('load', () => {
   const game = new Game;
   game.shoe.shuffle();
   renderBankrolls(game);
-  playRound(game);
+  startRound(game);
 
   document.getElementById('hitButton').addEventListener('click', () => {
     game.player.hit(game.shoe);
