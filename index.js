@@ -10,22 +10,23 @@ window.addEventListener('load', () => {
   const game = new Game;
   game.shoe.shuffle();
   renderBankrolls(game);
+
   startRound(game);
 
   document.getElementById('hitButton').addEventListener('click', () => {
-    game.player.hit(game.shoe);
+    game.player.hit(game, game.shoe);
   });
 
   document.getElementById('stayButton').addEventListener('click', () => {
-    game.player.stay();
+    game.player.stay(game);
   });
 
   document.getElementById('doubleDownButton').addEventListener('click', () => {
-    game.player.doubleDown(game.shoe);
+    game.player.doubleDown(game, game.shoe);
   });
 
   document.getElementById('splitButton').addEventListener('click', () => {
-    game.player.split();
+    game.player.split(game);
   });
 
   document.getElementById('bet25').addEventListener('click', () => {

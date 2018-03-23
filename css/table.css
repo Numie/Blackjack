@@ -22,7 +22,7 @@ h3 {
   width: max-content;
 }
 
-#player-hand-value {
+.hand-value {
   padding: 20px;
   text-align: center;
   font-size: 36px;
