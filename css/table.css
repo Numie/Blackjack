@@ -42,8 +42,16 @@ h3 {
 
 .card-container {
   display: flex;
-  width: max-content;
   position: relative;
+}
+
+#player-card-container {
+  width: 150px;
+  overflow: visible;
+}
+
+#dealer-card-container {
+  width: max-content;
 }
 
 .buttons {
