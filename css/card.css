@@ -8,6 +8,12 @@
   border: 1px solid #DADADA;
 }
 
+/* #three {
+  transform: rotate(90deg);
+  bottom: 80px;
+  left: -120px;
+} */
+
 .red-card {
   color: red;
 }
