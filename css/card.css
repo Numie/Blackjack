@@ -37,7 +37,7 @@
   transform: rotateY(180deg);
 }
 
-.flipped {
+#flipped {
   transform: rotateY( 180deg );
 }
 
