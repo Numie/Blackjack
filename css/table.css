@@ -43,6 +43,7 @@ h3 {
 .card-container {
   display: flex;
   position: relative;
+  perspective: 800px;
 }
 
 #player-card-container {
@@ -52,6 +53,12 @@ h3 {
 
 #dealer-card-container {
   width: max-content;
+}
+
+.flipped-card-container {
+  min-width: 100px;
+  height: 150px;
+  margin: 0 2px;
 }
 
 .buttons {

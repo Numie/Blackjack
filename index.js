@@ -13,6 +13,10 @@ window.addEventListener('load', () => {
 
   startRound(game);
 
+  // document.getElementById('bet25').addEventListener('click', () => {
+  //   document.getElementById('facedown').classList.toggle('flipped');
+  // });
+
   document.getElementById('hitButton').addEventListener('click', () => {
     game.player.hit(game, game.shoe);
   });
