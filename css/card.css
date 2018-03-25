@@ -8,6 +8,16 @@
   border: 1px solid #DADADA;
 }
 
+.card-two {
+  bottom: 15px;
+  left: -70px;
+}
+
+.card-three {
+  bottom: 30px;
+  left: -140px;
+}
+
 .card {
   width: 100%;
   height: 100%;
@@ -40,12 +50,6 @@
 #flipped {
   transform: rotateY( 180deg );
 }
-
-/* #three {
-  transform: rotate(90deg);
-  bottom: 80px;
-  left: -120px;
-} */
 
 .red-card {
   color: red;
