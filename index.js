@@ -13,19 +13,19 @@ window.addEventListener('load', () => {
 
   startRound(game);
 
-  document.getElementById('hitButton').addEventListener('click', () => {
+  document.getElementById('hit-button').addEventListener('click', () => {
     game.player.hit(game, game.shoe);
   });
 
-  document.getElementById('stayButton').addEventListener('click', () => {
+  document.getElementById('stay-button').addEventListener('click', () => {
     game.player.stay(game);
   });
 
-  document.getElementById('doubleDownButton').addEventListener('click', () => {
+  document.getElementById('double-down-button').addEventListener('click', () => {
     game.player.doubleDown(game, game.shoe);
   });
 
-  document.getElementById('splitButton').addEventListener('click', () => {
+  document.getElementById('split-button').addEventListener('click', () => {
     game.player.split(game);
   });
 
