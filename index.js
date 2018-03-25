@@ -4,7 +4,7 @@ import Player from './lib/player';
 import Dealer from './lib/dealer';
 import Hand from './lib/hand';
 import Game from './lib/game';
-import { renderBankrolls, renderBet, startRound, startHand } from './lib/util.js';
+import { renderBankrolls, startRound, startHand } from './lib/util.js';
 
 window.addEventListener('load', () => {
   const game = new Game;
@@ -12,10 +12,6 @@ window.addEventListener('load', () => {
   renderBankrolls(game);
 
   startRound(game);
-
-  // document.getElementById('bet25').addEventListener('click', () => {
-  //   document.getElementById('facedown').classList.toggle('flipped');
-  // });
 
   document.getElementById('hitButton').addEventListener('click', () => {
     game.player.hit(game, game.shoe);
