@@ -12,11 +12,11 @@ body {
 }
 
 .dealer-area {
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .player-area {
-  margin-top: 60px;
+  margin-top: 0;
 }
 
 .player-info-area, .dealer-info-area {
@@ -37,20 +37,20 @@ h3 {
 
 #dealer-hand-value {
   position: absolute;
-  bottom: -80px;
+  bottom: -50px;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 36px;
+  font-size: 18px;
 }
 
 .player-hand-value {
   position: absolute;
-  top: -80px;
+  top: -50px;
   left: 30px;
   text-align: center;
-  font-size: 36px;
-  width: 50px;
+  font-size: 18px;
+  width: 40px;
 }
 
 .card-area {
@@ -87,7 +87,7 @@ h3 {
 }
 
 #message {
-  min-height: 60px;
+  height: 120px;
   font-size: 48px;
   text-align: center;
   margin-left: 20%;
