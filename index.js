@@ -5,6 +5,7 @@ import Dealer from './lib/dealer';
 import Hand from './lib/hand';
 import Game from './lib/game';
 import { renderBankrolls, startRound, startHand } from './lib/util.js';
+import { printError, clearError } from './lib/messages.js';
 
 window.addEventListener('load', () => {
   const game = new Game;
@@ -14,19 +15,31 @@ window.addEventListener('load', () => {
   startRound(game);
 
   document.getElementById('hit-button').addEventListener('click', () => {
+    clearError();
     game.player.hit(game, game.shoe);
   });
 
   document.getElementById('stay-button').addEventListener('click', () => {
+    clearError();
     game.player.stay(game);
   });
 
   document.getElementById('double-down-button').addEventListener('click', () => {
-    game.player.doubleDown(game, game.shoe);
+    clearError();
+    if (game.player.bankroll < game.player.currentHand.bet) {
+      printError('Your bankroll is too low to double!');
+    } else {
+      game.player.doubleDown(game, game.shoe);
+    }
   });
 
   document.getElementById('split-button').addEventListener('click', () => {
-    game.player.split(game);
+    clearError();
+    if (game.player.bankroll < game.player.currentHand.bet) {
+      printError('Your bankroll is too low to split!');
+    } else {
+      game.player.split(game);
+    }
   });
 
   document.getElementById('bet25').addEventListener('click', () => {

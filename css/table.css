@@ -53,7 +53,7 @@ h3 {
   justify-content: space-around;
   margin: 0 auto;
   width: 80%;
-  height: 200px;
+  height: 180px;
   border: 10px solid white;
   border-radius: 20px;
   position: relative;
@@ -78,6 +78,13 @@ h3 {
   min-width: 100px;
   height: 150px;
   margin: 0 2px;
+}
+
+#message {
+  width: 100%;
+  min-height: 60px;
+  font-size: 48px;
+  text-align: center;
 }
 
 .buttons {
@@ -106,4 +113,12 @@ button {
 #bet-buttons button {
   height: 75px;
   border-radius: 50%;
+}
+
+#error {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
 }
