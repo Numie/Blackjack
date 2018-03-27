@@ -157,10 +157,16 @@ button:active {
   transform: translateX(2px) translateY(2px);
 }
 
-#bet-buttons button {
+.bet-amounts {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+
+.alternate-bet-buttons {
+  display: none;
+  height: auto;
+  border-radius: 5px;
 }
 
 #error {

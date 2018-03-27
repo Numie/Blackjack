@@ -45,24 +45,47 @@ window.addEventListener('load', () => {
     }
   });
 
+  document.getElementById('clear-bet').addEventListener('click', () => {
+    game.player.clearBet();
+    Array.from(document.getElementsByClassName('alternate-bet-buttons')).forEach(button => button.style.display = 'none');
+  });
+
   document.getElementById('bet25').addEventListener('click', () => {
     game.player.placeBet(game.player.currentHand, 25);
-    startHand(game);
+    betButtonAction(game);
   });
 
   document.getElementById('bet100').addEventListener('click', () => {
     game.player.placeBet(game.player.currentHand, 100);
-    startHand(game);
+    betButtonAction(game);
   });
 
   document.getElementById('bet500').addEventListener('click', () => {
     game.player.placeBet(game.player.currentHand, 500);
-    startHand(game);
+    betButtonAction(game);
   });
 
   document.getElementById('betAllIn').addEventListener('click', () => {
     game.player.placeBet(game.player.currentHand, game.player.bankroll);
+    betButtonAction(game);
+  });
+
+  document.getElementById('deal').addEventListener('click', () => {
     startHand(game);
   });
+
+  const betButtonAction = game => {
+    document.getElementById('bet-button-title').style.display = 'none';
+    const playerBet = document.getElementById('player-bet');
+    if (playerBet) {
+      playerBet.innerHTML = `$${game.player.bet}`;
+    } else {
+      const bet = document.createElement('h1');
+      bet.id = 'player-bet';
+      bet.innerHTML = `$${game.player.bet}`;
+      document.getElementById('bet-buttons').prepend(bet);
+    }
+    Array.from(document.getElementsByClassName('alternate-bet-buttons')).forEach(button => button.style.display = 'initial');
+  };
 
 });
