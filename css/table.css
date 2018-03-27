@@ -61,10 +61,11 @@ h3 {
 .player-hand-value {
   position: absolute;
   top: -50px;
-  left: 25px;
+  left: 30px;
   text-align: center;
   font-size: 28px;
   width: 40px;
+  border-radius: 5px;
 }
 
 .card-area {
@@ -76,6 +77,7 @@ h3 {
   border: 10px solid white;
   border-radius: 20px;
   position: relative;
+  font-family: Impact;
 }
 
 .player-card-container {
