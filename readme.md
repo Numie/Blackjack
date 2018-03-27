@@ -2,7 +2,7 @@
 
 ## How To Play
 
-You and the Dealer each start with $1000. Bet in increments of $25, $100, $500 per hand or go all in. The last player with money left wins.
+You and the Dealer each start with $1000. Bet in increments of $25, $100, $500 per hand or go all in. The last player with money left wins. See it live [here](https://numie.github.io/Blackjack/).
 
 ## Technical Implementation
 
