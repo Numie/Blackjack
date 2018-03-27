@@ -177,6 +177,14 @@ button:active {
   text-align: center;
 }
 
+#play-again-button {
+  margin: 60px auto 0;
+  width: 200px;
+  height: 60px;
+  font-size: 24px;
+  display: none;
+}
+
 #footer {
   position: fixed;
   bottom: 5px;

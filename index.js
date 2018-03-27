@@ -74,6 +74,13 @@ window.addEventListener('load', () => {
     startHand(game);
   });
 
+  document.getElementById('play-again-button').addEventListener('click', () => {
+    const game = new Game;
+    game.shoe.shuffle();
+    renderBankrolls(game);
+    startRound(game);
+  });
+
   const betButtonAction = game => {
     document.getElementById('bet-button-title').style.display = 'none';
     const playerBet = document.getElementById('player-bet');
