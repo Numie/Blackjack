@@ -5,10 +5,14 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/card.css">
+    <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
     <script type="text/javascript" src="bundle.js"></script>
     <title>Blackjack</title>
   </head>
   <body>
+
+    <div id=title>BLACKJACK</div>
+    <div id=subtitle>Dealer must draw to 16 and stay on all 17s.</div>
 
     <div class='dealer-area'>
       <div id='dealer-info-area' class='dealer-info-area'>
@@ -31,27 +35,6 @@
         <h1 id='player-bankroll'></h1>
       </div>
       <div id='player-card-area' class='card-area'>
-        <!-- <div id='player-card-container-0' class='player-card-container'>
-          <div id='player-hand-value' class='player-hand-value'>18</div>
-          <h3 class='player-bet'></h3>
-          <div class='player-card'></div>
-          <div class='player-card card-two'></div>
-          <div class='player-card card-three'></div>
-        </div>
-        <div id='player-card-container-1' class='player-card-container'>
-          <div id='player-hand-value' class='player-hand-value'>18</div>
-          <h3 class='player-bet'></h3>
-          <div class='player-card'></div>
-          <div class='player-card card-two'></div>
-          <div class='player-card card-three'></div>
-        </div>
-        <div id='player-card-container-2' class='player-card-container'>
-          <div id='player-hand-value' class='player-hand-value'>18</div>
-          <h3 class='player-bet'></h3>
-          <div class='player-card'></div>
-          <div class='player-card card-two'></div>
-          <div class='player-card card-three'></div>
-        </div> -->
       </div>
     </div>
 
@@ -70,6 +53,9 @@
       <button id='split-button'>Split</button>
     </div>
 
+    <div id='footer'>Game by Jason Numeroff.<br>
+      See the code at <a href='https://github.com/Numie/Blackjack'>Github</a>. Good luck!
+    </div>
 
   </body>
 </html>

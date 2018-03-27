@@ -6,6 +6,20 @@ body {
   color: white;
 }
 
+#title {
+  font-size: 72px;
+  font-family: 'Skranji', cursive;
+  letter-spacing: 5px;
+  margin: 0 20%;
+  text-align: center;
+}
+
+#subtitle {
+  font-size: 20px;
+  margin: 0 20%;
+  text-align: center;
+}
+
 .dealer-area, .player-area {
   display: flex;
   margin: 20px;
@@ -37,28 +51,27 @@ h3 {
 
 #dealer-hand-value {
   position: absolute;
-  bottom: -50px;
+  bottom: -60px;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 36px;
 }
 
 .player-hand-value {
   position: absolute;
-  top: -50px;
+  top: -65px;
   left: 30px;
   text-align: center;
-  font-size: 18px;
-  width: 40px;
+  font-size: 36px;
+  width: 50px;
 }
 
 .card-area {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 auto;
-  width: 80%;
+  width: 60%;
   height: 180px;
   border: 10px solid white;
   border-radius: 20px;
@@ -90,18 +103,21 @@ h3 {
   height: 120px;
   font-size: 48px;
   text-align: center;
-  margin-left: 20%;
+  margin: 0 20%;
   padding-top: 36px;
 }
 
 .buttons {
-  margin-top: 40px;
-  margin-left: 20%;
+  margin: 0 20%;
   text-align: center;
 }
 
 #bet-buttons, #action-buttons {
   display: none;
+}
+
+#action-buttons {
+  margin-top: 40px;
 }
 
 .player-bet {
@@ -131,4 +147,15 @@ button {
   font-style: italic;
   font-weight: bold;
   text-align: center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-align: right;
+}
+
+#footer a {
+  text-decoration: underline;
 }
