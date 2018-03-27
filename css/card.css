@@ -1,14 +1,14 @@
 .player-card {
   position: relative;
-  min-width: 100px;
-  height: 150px;
+  min-width: 90px;
+  height: 135px;
   background-color: white;
   border-radius: 10px;
   margin: 0 2px;
   border: 1px solid #DADADA;
 }
 
-.card-two {
+/* .card-two {
   bottom: 15px;
   left: -70px;
 }
@@ -16,7 +16,7 @@
 .card-three {
   bottom: 30px;
   left: -140px;
-}
+} */
 
 .card {
   width: 100%;
@@ -28,7 +28,7 @@
 .card figure {
   display: block;
   position: absolute;
-  height: 150px;
+  height: 135px;
   width: 100%;
   margin: 0;
   background-color: white;
