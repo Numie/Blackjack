@@ -6,6 +6,7 @@ import Hand from './lib/hand';
 import Game from './lib/game';
 import { renderBankrolls, startRound, startHand } from './lib/util.js';
 import { printError, clearError } from './lib/messages.js';
+import { chipsSound } from './lib/sounds';
 
 window.addEventListener('load', () => {
   const game = new Game;
@@ -29,6 +30,7 @@ window.addEventListener('load', () => {
     if (game.player.bankroll < game.player.currentHand.bet) {
       printError('Your bankroll is too low to double!');
     } else {
+      chipsSound.play();
       game.player.doubleDown(game, game.shoe);
     }
   });
@@ -38,6 +40,7 @@ window.addEventListener('load', () => {
     if (game.player.bankroll < game.player.currentHand.bet) {
       printError('Your bankroll is too low to split!');
     } else {
+      chipsSound.play();
       game.player.split(game);
     }
   });
