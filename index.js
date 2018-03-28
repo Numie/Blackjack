@@ -4,7 +4,7 @@ import Player from './lib/player';
 import Dealer from './lib/dealer';
 import Hand from './lib/hand';
 import Game from './lib/game';
-import { renderBankrolls, startRound, startHand } from './lib/util.js';
+import { renderBankrolls, startRound, startHand, resetGame } from './lib/util.js';
 import { printError, clearError } from './lib/messages.js';
 import { chipsSound } from './lib/sounds';
 
@@ -79,9 +79,7 @@ window.addEventListener('load', () => {
   });
 
   document.getElementById('play-again-button').addEventListener('click', () => {
-    const game = new Game;
-    game.shoe.shuffle();
-    renderBankrolls(game);
+    resetGame(game);
     startRound(game);
   });
 
@@ -97,6 +95,7 @@ window.addEventListener('load', () => {
       document.getElementById('bet-buttons').prepend(bet);
     }
     Array.from(document.getElementsByClassName('alternate-bet-buttons')).forEach(button => button.style.display = 'initial');
+    renderBankrolls(game);
   };
 
 });
