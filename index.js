@@ -84,12 +84,28 @@ window.addEventListener('load', () => {
     startRound(game);
   });
 
+  const showCountButton = document.getElementById('show-count-button');
   document.getElementById('show-count-button').addEventListener('click', () => {
     document.getElementById('count').classList.toggle('active');
+
+    if (showCountButton.getAttribute("data-text-swap") == showCountButton.innerHTML) {
+      showCountButton.innerHTML = showCountButton.getAttribute("data-text-original");
+    } else {
+      showCountButton.setAttribute("data-text-original", showCountButton.innerHTML);
+      showCountButton.innerHTML = showCountButton.getAttribute("data-text-swap");
+    }
   });
 
+  const showBasicStrategyButton = document.getElementById('show-basic-strategy-button');
   document.getElementById('show-basic-strategy-button').addEventListener('click', () => {
     document.getElementById('basic-strategy').classList.toggle('active');
+
+    if (showBasicStrategyButton.getAttribute("data-text-swap") == showBasicStrategyButton.innerHTML) {
+      showBasicStrategyButton.innerHTML = showBasicStrategyButton.getAttribute("data-text-original");
+    } else {
+      showBasicStrategyButton.setAttribute("data-text-original", showBasicStrategyButton.innerHTML);
+      showBasicStrategyButton.innerHTML = showBasicStrategyButton.getAttribute("data-text-swap");
+    }
   });
 
   const betButtonAction = game => {
