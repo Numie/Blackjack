@@ -122,6 +122,25 @@ h3 {
   padding-top: 24px;
 }
 
+#count-and-basic-strategy {
+  width: 20%;
+  text-align: center;
+}
+
+#show-count-button {
+  width: max-content;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+}
+
+.count-and-basic-strategy {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
 .buttons {
   margin: 0 20%;
   text-align: center;

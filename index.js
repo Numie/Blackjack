@@ -46,8 +46,9 @@ window.addEventListener('load', () => {
   });
 
   document.getElementById('clear-bet').addEventListener('click', () => {
-    game.player.clearBet();
+    game.player.clearBet(game);
     Array.from(document.getElementsByClassName('alternate-bet-buttons')).forEach(button => button.style.display = 'none');
+    renderBankrolls(game);
   });
 
   document.getElementById('bet25').addEventListener('click', () => {
@@ -81,6 +82,10 @@ window.addEventListener('load', () => {
   document.getElementById('play-again-button').addEventListener('click', () => {
     resetGame(game);
     startRound(game);
+  });
+
+  document.getElementById('show-count-button').addEventListener('click', () => {
+    document.getElementById('count').classList.toggle('active');
   });
 
   const betButtonAction = game => {
