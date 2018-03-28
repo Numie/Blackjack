@@ -51,21 +51,25 @@ window.addEventListener('load', () => {
   });
 
   document.getElementById('bet25').addEventListener('click', () => {
+    chipsSound.play();
     game.player.placeBet(game.player.currentHand, 25);
     betButtonAction(game);
   });
 
   document.getElementById('bet100').addEventListener('click', () => {
+    chipsSound.play();
     game.player.placeBet(game.player.currentHand, 100);
     betButtonAction(game);
   });
 
   document.getElementById('bet500').addEventListener('click', () => {
+    chipsSound.play();
     game.player.placeBet(game.player.currentHand, 500);
     betButtonAction(game);
   });
 
   document.getElementById('betAllIn').addEventListener('click', () => {
+    chipsSound.play();
     game.player.placeBet(game.player.currentHand, game.player.bankroll);
     betButtonAction(game);
   });
