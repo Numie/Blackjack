@@ -88,6 +88,10 @@ window.addEventListener('load', () => {
     document.getElementById('count').classList.toggle('active');
   });
 
+  document.getElementById('show-basic-strategy-button').addEventListener('click', () => {
+    document.getElementById('basic-strategy').classList.toggle('active');
+  });
+
   const betButtonAction = game => {
     document.getElementById('bet-button-title').style.display = 'none';
     const playerBet = document.getElementById('player-bet');

@@ -123,14 +123,38 @@ h3 {
 }
 
 #count-and-basic-strategy {
+  position: relative;
   width: 20%;
   text-align: center;
 }
 
-#show-count-button {
+#show-count-button, #show-basic-strategy-button {
   width: max-content;
   padding: 10px 5px;
   margin-bottom: 10px;
+}
+
+#show-basic-strategy-button {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+#basic-strategy {
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+#show-basic-strategy-button:active {
+  top: 87px;
+  left: calc(50% + 2px);
+  -webkit-transform: translateX(calc(-50% + 2px));
+  transform: translateX(calc(-50% + 2px))
 }
 
 .count-and-basic-strategy {
@@ -173,6 +197,7 @@ button {
 
 button:active {
   box-shadow: 0 0 #666;
+  -webkit-transform: translateX(2px) translateY(2px);
   transform: translateX(2px) translateY(2px);
 }
 
