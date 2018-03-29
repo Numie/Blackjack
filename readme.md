@@ -16,12 +16,12 @@ Hit, stand, split and double down. 8 decks, blackjack pays 3/2, double after spl
 ### *Basic Strategy Calculator*
 If you're not sure what the right play is, ask!
 
-![Basic Strategy](/gifs/basic_strategy.mp4)
+![Basic Strategy](https://www.giphy.com/gifs/65ONwYe4QvWfZ6Dvm2.gif)
 
 ### *Card Counter*
 Uses the standard high-low counting system. Deck penetration is not taken into account (yet!) Cards 2 through 6 add to the count. Cards 10 through Ace reduce the count. A positive count is better for the player, while a negative count is better for the dealer.
 
-![Card Count](/gifs/card_count.mp4)
+![Card Count](http://www.giphy.com/gifs/ckAyJrS4qF88tFSw0a.gif)
 
 ## Future Roadmap
 
