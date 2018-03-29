@@ -39,7 +39,9 @@ body {
 
 #instructions {
   width: 20%;
+  height: 160px;
   padding-left: 40px;
+  overflow: visible;
 }
 
 ul {
@@ -184,6 +186,14 @@ h3 {
   font-size: 20px;
 }
 
+#bet-button-title {
+  margin: 0 auto 15px;
+}
+
+#player-bet {
+  margin: 0 auto;
+}
+
 button {
   margin: 0 5px;
   padding: 10px 0;
@@ -209,8 +219,8 @@ button:active {
 
 .alternate-bet-buttons {
   display: none;
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 

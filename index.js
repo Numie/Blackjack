@@ -120,6 +120,8 @@ window.addEventListener('load', () => {
       document.getElementById('bet-buttons').prepend(bet);
     }
     Array.from(document.getElementsByClassName('alternate-bet-buttons')).forEach(button => button.style.display = 'initial');
+    document.getElementById('bet-buttons-container').style.display = 'initial';
+
     renderBankrolls(game);
   };
 

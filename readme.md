@@ -13,5 +13,6 @@ Blackjack is built is JavaScript and CSS. No external libraries or plugins are u
 Upcoming features include...
 
 1. Surrender functionality
+1. Choose your own rules
 1. Basic strategy coaching
-1. Card counting
+1. Multiple card counting methods
