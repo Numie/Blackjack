@@ -16,12 +16,12 @@ Hit, stand, split and double down. 8 decks, blackjack pays 3/2, double after spl
 ### *Basic Strategy Calculator*
 If you're not sure what the right play is, ask!
 
-![Basic Strategy](https://github.com/Numie/Blackjack/blob/master/gifs/basic_strategy.mp4)
+![Basic Strategy](Blackjack/gifs/basic_strategy.mp4)
 
 ### *Card Counter*
 Uses the standard high-low counting system. Deck penetration is not taken into account (yet!) Cards 2 through 6 add to the count. Cards 10 through Ace reduce the count. A positive count is better for the player, while a negative count is better for the dealer.
 
-![Card Count](https://github.com/Numie/Blackjack/blob/master/gifs/card_count.mp4)
+![Card Count](Blackjack/gifs/card_count.mp4)
 
 ## Future Roadmap
 
