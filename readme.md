@@ -13,6 +13,8 @@ Blackjack is built is JavaScript and CSS. No external libraries or plugins are u
 ### *All Aspects of Standard Blackjack Gameplay*
 Hit, stand, split and double down. 8 decks, blackjack pays 3/2, double after split is allowed, split as many times as you like, and of course...dealer always stands on 17 (None of this hit on 17 nonsense!)
 
+![Split and Double](https://media.giphy.com/media/3FQ92Mk1glxViyuyU4/giphy.gif)
+
 ### *Basic Strategy Calculator*
 If you're not sure what the right play is, ask!
 
