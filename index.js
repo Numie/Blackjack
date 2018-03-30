@@ -1,7 +1,7 @@
 import Shoe from './lib/shoe';
 import Card from './lib/card';
 import Player from './lib/player';
-import Dealer from './lib/dealer';
+import Dealer from './lib/player';
 import Hand from './lib/hand';
 import Game from './lib/game';
 import { renderBankrolls, startRound, startHand, resetGame } from './lib/util.js';
