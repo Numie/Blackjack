@@ -5,11 +5,34 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet">
     <script type="text/javascript" src="bundle.js"></script>
     <title>Blackjack</title>
   </head>
   <body>
+
+    <div id='modal-container'>
+      <div id='modal'>
+        <h1>How To Play</h1>
+        <ol>
+          <li>You and the Dealer start with $1000 dollars.</li>
+          <li>Bet in increments of $25, $100, $500 per hand or go all in.</li>
+          <li>The last player with money left wins!</li>
+          <li>Game is played with 8 decks.</li>
+          <li>Dealer must hit until reaching 17, then must stand.</li>
+          <li>Double down after split is allowed.</li>
+          <li>You may split an unlimited number of times.</li>
+          <li>For full blackjack rules, see the <a href='https://wizardofodds.com/games/blackjack/basics/' target='blank'>Wizard of Odds</a>.</li>
+        </ol>
+        <div id='heart'>&hearts;</div>
+        <div id='diamond'>&diams;</div>
+        <div id='spade'>&spades;</div>
+        <div id='club'>&clubs;</div>
+      </div>
+    </div>
+
+    <div id='how-to-play'>How To Play</div>
 
     <div id=title>BLACKJACK</div>
     <div id=subtitle>Dealer must draw to 16 and stay on all 17s.</div>
@@ -24,13 +47,13 @@
         <div id='dealer-card-container' class='card-container'>
         </div>
       </div>
-      <div id='instructions'>
-        <h1>How To Play</h1>
-          <ul>
-            <li>You and the Dealer start with $1000.</li>
-            <li>Bet in increments of $25, $100, $500 per hand or go all in.</li>
-            <li>The last player with money left wins!</li>
-        </ul>
+      <div class='count-and-basic-strategy-container'>
+        <button id='show-count-button' data-text-original='Show Count' data-text-swap='Hide Count'>Show Count</button>
+        <div id='count-inner-container' class='count-and-basic-strategy-inner-container'>
+          <div>Running Count:&nbsp;&nbsp;<h1 id='count' class='count-and-basic-strategy'>0</h1></div>
+          <div>Decks Remaining:&nbsp;&nbsp;<h1 id='decks-remaining' class='count-and-basic-strategy'>0</h1></div>
+          <div>True Count:&nbsp;&nbsp;<h1 id='true-count' class='count-and-basic-strategy'>0</h1></div>
+        </div>
       </div>
     </div>
 
@@ -44,12 +67,11 @@
       </div>
       <div id='player-card-area' class='card-area'>
       </div>
-      <div id='count-and-basic-strategy'>
-        <button id='show-count-button' data-text-original='Show Count' data-text-swap='Hide Count'>Show Count</button>
-        <h1 id='count' class='count-and-basic-strategy'>0</h1>
-
+      <div class='count-and-basic-strategy-container'>
         <button id='show-basic-strategy-button' data-text-original='Show Basic Strategy' data-text-swap='Hide Basic Strategy'>Show Basic Strategy</button>
-        <h1 id='basic-strategy' class='count-and-basic-strategy'></h1>
+        <div id='basic-strategy-inner-container' class='count-and-basic-strategy-inner-container'>
+          <div><div id='basic-strategy-text'>Waiting For Your Turn...</div><h1 id='basic-strategy' class='count-and-basic-strategy'></h1></div>
+        </div>
       </div>
     </div>
 

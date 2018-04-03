@@ -15,6 +15,16 @@ window.addEventListener('load', () => {
 
   startRound(game);
 
+  document.getElementById('how-to-play').addEventListener('click', () => {
+    document.getElementById('modal-container').style.display = 'block';
+  });
+
+  document.getElementById('modal-container').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      document.getElementById('modal-container').style.display = 'none';
+    }
+  });
+
   document.getElementById('hit-button').addEventListener('click', () => {
     clearError();
     game.player.hit(game, game.shoe);
@@ -86,7 +96,7 @@ window.addEventListener('load', () => {
 
   const showCountButton = document.getElementById('show-count-button');
   document.getElementById('show-count-button').addEventListener('click', () => {
-    document.getElementById('count').classList.toggle('active');
+    document.getElementById('count-inner-container').classList.toggle('active');
 
     if (showCountButton.getAttribute("data-text-swap") == showCountButton.innerHTML) {
       showCountButton.innerHTML = showCountButton.getAttribute("data-text-original");
@@ -98,7 +108,7 @@ window.addEventListener('load', () => {
 
   const showBasicStrategyButton = document.getElementById('show-basic-strategy-button');
   document.getElementById('show-basic-strategy-button').addEventListener('click', () => {
-    document.getElementById('basic-strategy').classList.toggle('active');
+    document.getElementById('basic-strategy-inner-container').classList.toggle('active');
 
     if (showBasicStrategyButton.getAttribute("data-text-swap") == showBasicStrategyButton.innerHTML) {
       showBasicStrategyButton.innerHTML = showBasicStrategyButton.getAttribute("data-text-original");
